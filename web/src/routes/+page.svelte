@@ -57,7 +57,7 @@
 		</div>
 		-->
 		<div class="space-y-2">
-			<CodeBlock language="bash" code={`curl https://get.trollme.sh | sh`} text="text-5xl"></CodeBlock>
+			<CodeBlock language="bash" code={`curl -s https://get.trollme.sh | sh`} text="text-5xl"></CodeBlock>
 		</div>
 	</div>
 </div>
