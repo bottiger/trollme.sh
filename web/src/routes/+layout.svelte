@@ -31,10 +31,9 @@
 				<strong class="text-xl uppercase">🧌</strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<!--
 				<a
 					class="btn btn-sm variant-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
+					href="https://discord.com/users/530120102776143892"
 					target="_blank"
 					rel="noreferrer"
 				>
@@ -42,13 +41,12 @@
 				</a>
 				<a
 					class="btn btn-sm variant-ghost-surface"
-					href="https://twitter.com/SkeletonUI"
+					href="https://github.com/sponsors/bottiger"
 					target="_blank"
 					rel="noreferrer"
 				>
-					Twitter
+					Sponsor&nbsp;&nbsp;☕
 				</a>
-				-->
 				<a
 					class="btn btn-sm variant-ghost-surface"
 					href="https://github.com/bottiger/trollme.sh"
