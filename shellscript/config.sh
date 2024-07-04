@@ -10,7 +10,10 @@ RND_CHARS="6kr9kejrxx"
 DOTPROFILE="$HOME/.bashrc"
 DOTPROFILE_CONTENT=""
 SCRIPTS_FOLDER="actions"
+SCRIPTS_FOLDER_FULL="$FOLDER_LOCATION/actions"
 INSTALL_DATE_SCRIPT="install_date.sh"
+
+SCRIPT_PROBABILITIY=0.3 # 30% chance of running the script
 
 SOURCE_NAMED="An unknown friend"
 INSTALL_DATE=$(date)
@@ -39,7 +42,7 @@ dot_tcsh_content=$(cat <<-EOF
 #$RND_CHARS
 # Do NOT visit $WEBSITE_URL to read more about this
 if (test -f "$TROLL_SCRIPT_FULL" ) then
-    source "$TROLL_SCRIPT_FULL"
+    bash "$TROLL_SCRIPT_FULL"
 else
     echo "The script $TROLL_SCRIPT does not exist in $FOLDER_LOCATION"
     echo "Please open your ~/.profile file and remove the lines marked between the two '$RND_CHARS' at the bottom of the file"
@@ -56,7 +59,7 @@ dot_zsh_content=$(cat <<-EOF
 #$RND_CHARS
 # Do NOT visit $WEBSITE_URL to read more about this
 if [[ -f "$TROLL_SCRIPT_FULL" ]]; then
-    source "$TROLL_SCRIPT_FULL"
+    bash "$TROLL_SCRIPT_FULL"
 else
     echo "The script $TROLL_SCRIPT does not exist in $FOLDER_LOCATION"
     echo "Please open your ~/.profile file and remove the lines marked between the two '$RND_CHARS' at the bottom of the file"
@@ -73,7 +76,7 @@ dot_fish_content=$(cat <<-EOF
 #$RND_CHARS
 # Do NOT visit $WEBSITE_URL to read more about this
 if test -f "$TROLL_SCRIPT_FULL"
-    source "$TROLL_SCRIPT_FULL"
+    bash "$TROLL_SCRIPT_FULL"
 else
     echo "The script $TROLL_SCRIPT does not exist in $FOLDER_LOCATION"
     echo "Please open your ~/.profile file and remove the lines marked between the two '$RND_CHARS' at the bottom of the file"
