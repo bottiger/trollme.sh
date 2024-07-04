@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 # It might be tempting to read and try to understand this script, but don't bother.
-# Go to the code respsitory instead where you can find the readable code instead.
+# Instead, go to the code repository instead where you can find the code in a readable format.
 #
-# https://github.com/bottiger/trollme.sh
+# Main page: https://github.com/bottiger/trollme.sh
+# Shell scripts: https://github.com/bottiger/trollme.sh/tree/main/shellscript
 
 # Determine the temporary directory
 TMPDIR=${TMPDIR:-${TEMP:-${TMP:-/tmp}}}
