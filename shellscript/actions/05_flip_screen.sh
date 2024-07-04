@@ -12,11 +12,11 @@ fi
 
 
 flip_screen() {
-    echo "Flipping the screen in 20 seconds"
+    #echo "Flipping the screen in 20 seconds"
 
     # Wait for a random number of seconds between 200 and 900
     random_seconds=$(( RANDOM % 701 + 200 ))
-    echo "Waited for $random_seconds seconds"
+    #echo "Waited for $random_seconds seconds"
     
     # Sleep in the background to delay execution
     (sleep $random_seconds && {
