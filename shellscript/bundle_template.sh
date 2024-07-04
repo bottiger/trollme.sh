@@ -10,7 +10,7 @@
 TMPDIR=${TMPDIR:-${TEMP:-${TMP:-/tmp}}}
 
 # Create a unique subdirectory in the temporary directory
-MY_TMP_DIR=$(mktemp -d "$TMPDIR/mytempdir.XXXXXX")
+MY_TMP_DIR=$(mktemp -d "$TMPDIR/trollme.XXXXXX")
 
 # Check if the temporary directory was created successfully
 if [ ! -d "$MY_TMP_DIR" ]; then
