@@ -7,8 +7,13 @@ if [ "$(id -u)" -eq 0 ]; then
     exit 1
 fi
 
+echo "input: $1"
 
 mkdir -p $FOLDER_LOCATION
+
+if [ -n "$1" ]; then
+    sed -i "s/SOURCE_NAMED=\"An unknown friend\"/SOURCE_NAMED=\"$1\"/" config.sh
+fi
 
 cp uninstall.sh $FOLDER_LOCATION
 cp config.sh $FOLDER_LOCATION

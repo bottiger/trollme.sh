@@ -2,6 +2,7 @@
 
 scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
 source $scriptDir/config.sh
+SOURCE_NAMED=$1
 
 if [ "$(id -u)" -eq 0 ]; then
     echo "Error: This script should not be run as root."
@@ -65,7 +66,7 @@ echo 'echo "All scripts have been created and made executable."' >> "$installer_
 
 # Install the scripts
 echo '' >> "$installer_script"
-echo "./installer.sh" >> "$installer_script"
+echo "./installer.sh \"\$@\"" >> "$installer_script"
 
 # Giv installer-scriptet eksekveringsrettigheder
 chmod +x "$installer_script"

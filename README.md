@@ -1,4 +1,4 @@
-# TrollMe.sh
+# TrollMe.sh 🧌
 
 Welcome to TrollMe.sh, a fun and harmless way to play some jokes on your friends (because I know your family doesn't use the shell) when they leave their computer unattended. 
 
