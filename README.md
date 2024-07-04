@@ -38,6 +38,12 @@ Don't worry, everything is easy to remove. The script comes with an uninstall sc
 ```sh
 ~/.local/share/trollme.sh/uninstall.sh
 ```
+If you want or need to remove it manually you can just follow these two simple steps
+
+1. Delete the marked code snippet from your `.bashrc`, `.zshrc`, `.config/fish/config.fish` (or whatever file your shell uses)
+2. Delete the folder `~/.local/share/trollme.sh/`
+
+Nothing else is added to your computer during the installation or execution
 
 ## Support
 
