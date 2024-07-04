@@ -35,9 +35,18 @@ curl -s https://get.trollme.sh | sh -s -- "A friend"
 
 Don't worry, everything is easy to remove. The script comes with an uninstall script that will clean up all the installed joke scripts.
 
+```sh
+~/.local/share/trollme.sh/uninstall.sh
+```
+
 ## Support
 
-If you enjoy TrollMe.sh and want to support the project, you can do so on GitHub Sponsor. Your support is greatly appreciated!
+If you enjoy TrollMe.sh and want to support the project there are several ways.
+
+* Use it with friends :)
+* Like it
+* Write additional scripts
+* <a href="https://www.buymeacoffee.com/bottiger"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=bottiger&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff"></a>
 
 ## Disclaimer
 
