@@ -11,6 +11,7 @@ fi
 mkdir -p $FOLDER_LOCATION
 
 cp uninstall.sh $FOLDER_LOCATION
+cp config.sh $FOLDER_LOCATION
 ./readme.sh $FOLDER_LOCATION/README.md
 cp -r $SCRIPTS_FOLDER $FOLDER_LOCATION
 cp troll.sh $FOLDER_LOCATION

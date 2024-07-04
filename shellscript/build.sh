@@ -16,7 +16,7 @@ cp $scriptDir/_headers $scriptDir/artifacts/
 cp $scriptDir/_redirects $scriptDir/artifacts/
 
 scripts=("troll.sh" "config.sh" "dotprofile.sh" "uninstall.sh" "installer.sh" "README.md" "readme.sh")
-
+ 
 actions_dir="actions"
 
 # Filnavn på installer-scriptet
