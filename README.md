@@ -7,7 +7,7 @@ Welcome to TrollMe.sh, a fun and harmless way to play some jokes on your friends
 TrollMe.sh is a website that allows you to install friendly and removable scripts on your friends' computers. These scripts perform amusing actions to surprise them. Simply run the following command on their terminal:
 
 ```sh
-curl -s https://get.trollme.sh | sh -s -- "An unknown friend"
+curl -s https://get.trollme.sh | sh -s -- "A friend"
 ```
 
 ## What Does It Do?
@@ -28,7 +28,7 @@ It's easy to add more jokes. Just write a small script and commit it to the `she
 When installing the script, include your name to identify yourself. This adds to the fun and assures your friend that their computer has not been compromised. Here’s how you can do it:
 
 ```sh
-curl -s https://get.trollme.sh | sh -s -- "An unknown friend"
+curl -s https://get.trollme.sh | sh -s -- "A friend"
 ```
 
 ## Removal
