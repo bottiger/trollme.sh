@@ -1,10 +1,10 @@
 # TrollMe.sh 🧌
 
-Welcome to TrollMe.sh, a fun and harmless way to play some jokes on your friends (because I know your family doesn't use the shell) when they leave their computer unattended. 
+Welcome to [TrollMe.sh](https://trollme.sh), a fun and harmless way to play some jokes on your friends (because I know your family doesn't use the shell) when they leave their computer unattended. 
 
 ## What is TrollMe.sh?
 
-TrollMe.sh is a website that allows you to install friendly and removable scripts on your friends' computers. These scripts perform amusing actions to surprise them. Simply run the following command on their terminal:
+[TrollMe.sh](https://trollme.sh) is a website and a script that aims to be the fastest way to install friendly but annoying scripts on your friends' computers. These scripts perform amusing actions to surprise them. Simply run the following command on their terminal:
 
 ```sh
 curl -s https://get.trollme.sh | sh -s -- "A friend"
@@ -12,7 +12,8 @@ curl -s https://get.trollme.sh | sh -s -- "A friend"
 
 ## What Does It Do?
 
-The script installs a variety of harmless joke scripts on the computer. Here are a few examples:
+The script installs a variety of harmless joke scripts on the computer.
+Here are a few examples:
 
 - **Messing with Bash Aliases**: Change common commands to do unexpected things.
 - **Sudo Denial**: Display a message like "I’m sorry $USER, I’m afraid I can’t do that" instead of allowing the user to execute commands with sudo.

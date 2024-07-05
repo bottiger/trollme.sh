@@ -41,7 +41,7 @@
 				</a>
 				<a
 					class="btn btn-sm variant-ghost-surface"
-					href="https://github.com/sponsors/bottiger"
+					href="https://buymeacoffee.com/bottiger"
 					target="_blank"
 					rel="noreferrer"
 				>
