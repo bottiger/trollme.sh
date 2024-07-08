@@ -20,6 +20,8 @@ Here are a few examples:
 - **Strange Sounds**: Play odd sounds randomly in the background.
 - **Fake Login Prompt**: Present a fake login prompt when opening a new terminal window.
 
+## Implementation
+
 ## Adding Your Own Scripts
 
 It's easy to add more jokes. Just write a small script and commit it to the `shellscripts/actions` folder. This keeps the fun going and allows for a variety of jokes.
