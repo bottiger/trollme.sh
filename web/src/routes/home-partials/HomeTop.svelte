@@ -40,7 +40,7 @@
             <div class="mt-4">
                 <figure>
                     <section class="img-bg" />
-                    <CodeBlock class="code-block" language="bash" code={`curl -s https://get.trollme.sh | sh -s -- "A friend"`} text="text-4xl"></CodeBlock>
+                    <CodeBlock class="code-block" language="bash" code={`curl -s https://get.trollme.sh | sh -s -- "Your name"`} text="text-4xl"></CodeBlock>
                 </figure>
             </div>
         </div>
