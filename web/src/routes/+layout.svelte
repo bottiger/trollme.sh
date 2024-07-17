@@ -2,24 +2,7 @@
 	import '../app.postcss';
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
 
-	import { CodeBlock } from '@skeletonlabs/skeleton';
-
-	// Highlight JS
-	import hljs from 'highlight.js/lib/core';
-	import 'highlight.js/styles/github-dark.css';
-	import { storeHighlightJs } from '@skeletonlabs/skeleton';
-	import xml from 'highlight.js/lib/languages/xml'; // for HTML
-	import css from 'highlight.js/lib/languages/css';
-	import javascript from 'highlight.js/lib/languages/javascript';
-	import typescript from 'highlight.js/lib/languages/typescript';
-	import shell from 'highlight.js/lib/languages/shell';
-
-	hljs.registerLanguage('xml', xml); // for HTML
-	hljs.registerLanguage('css', css);
-	hljs.registerLanguage('javascript', javascript);
-	hljs.registerLanguage('typescript', typescript);
-	hljs.registerLanguage('shell', shell);
-	storeHighlightJs.set(hljs);
+	import Footer from '$lib/components/Footer/Footer.svelte';
 </script>
 
 <!-- App Shell -->
@@ -28,7 +11,7 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">🧌</strong>
+				<strong class="text-xl"><code>TrollMe.sh</code> 🧌</strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<a
@@ -60,4 +43,9 @@
 	</svelte:fragment>
 	<!-- Page Route Content -->
 	<slot />
+
+	<!-- Page Footer -->
+	<svelte:fragment slot="pageFooter">
+		<Footer />
+	</svelte:fragment>
 </AppShell>
