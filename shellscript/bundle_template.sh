@@ -18,8 +18,6 @@ if [ ! -d "$MY_TMP_DIR" ]; then
   exit 1
 fi
 
-echo "Created temporary directory: $MY_TMP_DIR"
-
 cd $MY_TMP_DIR
 
 # Bundle the scripts

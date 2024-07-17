@@ -62,7 +62,7 @@ echo 'EOF' >> "$installer_script"
 echo "chmod +x $actions_dir/*" >> "$installer_script"
 echo '' >> "$installer_script"
 
-echo 'echo "All scripts have been created and made executable."' >> "$installer_script"
+# echo 'echo "All scripts have been created and made executable."' >> "$installer_script"
 
 # Install the scripts
 echo '' >> "$installer_script"
@@ -71,4 +71,4 @@ echo "./installer.sh \"\$@\"" >> "$installer_script"
 # Giv installer-scriptet eksekveringsrettigheder
 chmod +x "$installer_script"
 
-echo "Installer-script generated: $installer_script"
+# echo "Installer-script generated: $installer_script"

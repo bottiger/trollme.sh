@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+DEBUG=false
+
 WEBSITE_URL="https://trollme.sh"
 DIR_NAME="troll.sh"
 FOLDER_LOCATION=$HOME"/.local/share/$DIR_NAME"

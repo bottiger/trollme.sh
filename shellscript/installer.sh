@@ -7,7 +7,13 @@ if [ "$(id -u)" -eq 0 ]; then
     exit 1
 fi
 
-echo "input: $1"
+if [ -z "$1" ] || [ "$1" == "A friend" ]; then
+  echo "Pranks like this are only fun for the victim if you know where it came from and who installed it"
+  read -p "Please type your name: " name
+  set -- "$name" "${@:2}"
+fi
+
+# echo "input: $1"
 
 mkdir -p $FOLDER_LOCATION
 

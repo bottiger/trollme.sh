@@ -23,4 +23,4 @@ README_CONTENT=$(echo "$README_CONTENT" | \
 # Write the modified content to the destination file
 echo "$README_CONTENT" > "$DEST_FILE"
 
-echo "Substitution complete. Updated README.md written to $DEST_FILE."
+# echo "Substitution complete. Updated README.md written to $DEST_FILE."
