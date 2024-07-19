@@ -2,7 +2,7 @@
 
 # Set default value for TROLLMESH_DEBUG if not already set
 #TROLLMESH_DEBUG="${TROLLMESH_DEBUG:-false}"
-TROLLMESH_DEBUG=true
+#TROLLMESH_DEBUG=true
 
 WEBSITE_URL="https://trollme.sh"
 DIR_NAME="troll.sh"

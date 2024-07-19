@@ -34,6 +34,19 @@ When installing the script, include your name to identify yourself. This adds to
 curl -s https://get.trollme.sh | sh -s -- "A friend"
 ```
 
+## Troll.sh
+
+The main script is called `troll.sh` and located in `~/.local/share/troll.sh/`. 
+The script will be executed every time a new shell is opened and maybe execute one of the troll-scripts. If it does it will select a valid script at random and run it.
+
+Whether a script is considered valid depends on how long `troll.sh` has been installed on the victims computer. Each troll-script is prefixed by a number which defines after how many days it will become active. Scripts starting with `00_` will be active from day 1 and scripts starting with `05_` will be dormant untill the installation is 5 days old.
+
+Scripts which are active from day one should be more subtle than scripts which are activated later on.
+
+### Debugging
+
+You can enable debugging output from `troll.sh` by setting the environment variable `TROLLMESH_DEBUG=true`
+
 ## Removal
 
 Don't worry, everything is easy to remove. The script comes with an uninstall script that will clean up all the installed joke scripts.
