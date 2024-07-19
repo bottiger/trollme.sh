@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-DEBUG=false
+# Set default value for TROLLMESH_DEBUG if not already set
+#TROLLMESH_DEBUG="${TROLLMESH_DEBUG:-false}"
+TROLLMESH_DEBUG=true
 
 WEBSITE_URL="https://trollme.sh"
 DIR_NAME="troll.sh"
@@ -15,10 +17,16 @@ SCRIPTS_FOLDER="actions"
 SCRIPTS_FOLDER_FULL="$FOLDER_LOCATION/actions"
 INSTALL_DATE_SCRIPT="install_date.sh"
 
-SCRIPT_PROBABILITIY=0.3 # 30% chance of running the script
+#SCRIPT_PROBABILITY="${SCRIPT_PROBABILITY:-0.3}"
+SCRIPT_PROBABILITY=0.3
 
 SOURCE_NAMED="An unknown friend"
 INSTALL_DATE=$(date)
+
+if [ "$TROLLMESH_DEBUG" = "true" ]; then
+  echo "Debug mode is ON"
+  echo "SCRIPT_PROBABILITY is $SCRIPT_PROBABILITY"
+fi
 
 
 dotprofile_content=$(cat <<-EOF

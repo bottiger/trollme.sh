@@ -5,8 +5,13 @@ if [ "$(id -u)" -eq 0 ]; then
     exit 1
 fi
 
+if [ "$TROLLMESH_DEBUG" = "true" ]; then
+  echo "Executing troll.sh"
+fi
+
 script_dir="$(dirname "${BASH_SOURCE[0]}")"
 source_file="$script_dir/config.sh" 
+
 # Check if the file exists and source it
 if [ -f "$source_file" ]; then
   source "$source_file"
@@ -18,7 +23,7 @@ fi
 # Calculate days since install
 install_date=$(date) # For testing: $(date -d '-20 day')
 if [ -f "$INSTALL_DATE_SCRIPT" ]; then
-  install_date=$(./$INSTALL_DATE_SCRIPT)
+  install_date=$(./"$INSTALL_DATE_SCRIPT")
 fi
 
 current_date=$(date +%Y-%m-%d)
@@ -46,10 +51,20 @@ if (( ${#files_to_execute[@]} > 0 )); then
   # Calculate a random number between 0 and 1
   random_number=$(awk 'BEGIN {srand(); print rand()}')
 
+  if [ "$TROLLMESH_DEBUG" = "true" ]; then
+    echo "random_number: $random_number"
+    echo "SCRIPT_PROBABILITY: $SCRIPT_PROBABILITY"
+  fi
+
   # Check if random number is less than the probability
-  if (( $(echo "$random_number < $SCRIPT_PROBABILITIY" | bc -l) )); then
+  if (( $(awk "BEGIN {print ($random_number < $SCRIPT_PROBABILITY)}") )); then
     # Select a random file from the array
     chosen_file=${files_to_execute[RANDOM % ${#files_to_execute[@]}]}
+
+    if [ "$TROLLMESH_DEBUG" = "true" ]; then
+      echo "chosen_file: $chosen_file"
+    fi
+
     source "$chosen_file"
   fi
 fi
