@@ -3,6 +3,9 @@
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
 
 	import Footer from '$lib/components/Footer/Footer.svelte';
+
+	import '@fortawesome/fontawesome-free/css/all.min.css';
+
 </script>
 
 <!-- App Shell -->

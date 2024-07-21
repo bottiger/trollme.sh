@@ -47,6 +47,10 @@ Scripts which are active from day one should be more subtle than scripts which a
 
 You can enable debugging output from `troll.sh` by setting the environment variable `TROLLMESH_DEBUG=true`
 
+```bash
+export TROLLMESH_DEBUG=true
+```
+
 ## Removal
 
 Don't worry, everything is easy to remove. The script comes with an uninstall script that will clean up all the installed joke scripts.

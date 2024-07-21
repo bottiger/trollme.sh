@@ -8,12 +8,12 @@
 		{
 			title: 'It\'s escalating',
 			body: 'It starts out slow with only a few rare anomalies. But over the course of a few days the anomalies will grow in scope and numbers',
-			icon: 'fa-universal-access'
+			icon: 'fa-rocket'
 		},
 		{
 			title: 'It\'s Removable',
 			body: `It includes uninstall.sh which will completley remove everything from the computer again`,
-			icon: 'fa-square-arrow-up-right'
+			icon: 'fa-trash-can'
 		},
 		{
 			title: 'It\'s Pure bash',
@@ -23,12 +23,12 @@
 		{
 			title: 'It\'s Open Source',
 			body: `Projects like this only makes sense if you are able to review the code, which should be the bare minimum in your due diligence process. If you have the technical skills you are also encourages to help out by adding new scripts`,
-			icon: 'fa-puzzle-piece'
+			icon: 'fa-brands fa-github'
 		},
 		{
 			title: 'But! You are still accountable',
 			body: 'You are strongly encouraged to submit your name at install-time. This will be visible to the victim when he/she finds the scripts. Pranks only becomes funnier when you know whos behind it, and if you are not willing to identify yourself you should probably not use this',
-			icon: 'fa-icons'
+			icon: 'fa-id-card'
 		}
 	];
 </script>
