@@ -49,14 +49,14 @@ eval set -- "$PARSED_ARGS"
 
 # Default values
 LIST=0
-SCRIPT=""
+SCRIPT_TO_EXECUTE=""
 
 while true; do
     case "$1" in
         -l | --list )
             LIST=1; shift ;;
         -s | --script )
-            SCRIPT=$1; shift ;;
+            SCRIPT_TO_EXECUTE="$2"; shift 2;;
         -h | --help )
             show_help; exit 0 ;;
         -- )
@@ -66,20 +66,13 @@ while true; do
     esac
 done
 
-# Check for the mandatory argument
-if [[ $LIST -eq 0 && -z "$1" ]]; then
-    >&2  echo "Error: Name missing"
-    show_help
-    exit 1
-fi
-
 INPUT_NAME_ARG="$1"
 
 
 if [ "$TROLLMESH_DEBUG" = "true" ]; then
   echo "Input name: $INPUT_NAME_ARG"
   echo "List mode: $LIST"
-  echo "Script name: $SCRIPT"
+  echo "Script name: $SCRIPT_TO_EXECUTE"
 fi
 
 
@@ -94,6 +87,23 @@ else
   echo "Error: File '$source_file' not found."
   exit 1;
 fi
+
+SCRIPT_TO_EXECUTE=$(echo "$SCRIPT_TO_EXECUTE" | xargs)
+if [[ -n "$SCRIPT_TO_EXECUTE" ]]; then
+    full_script_path="$script_dir/$SCRIPT_TO_EXECUTE"
+    if [[ -x "$full_script_path" ]]; then
+        echo "Executing script: $full_script_path"
+        "$full_script_path"
+        exit 0
+    else
+        >&2 echo "Error: Script $SCRIPT_TO_EXECUTE is not executable or does not exist"
+        exit 1
+    fi
+else
+    >&2 echo "Error: No script specified for execution"
+    exit 1
+fi
+
 
 # Calculate days since install
 install_date=$(date) # For testing: $(date -d '-20 day')
@@ -124,6 +134,14 @@ if [ "$LIST" -eq 1 ]; then
 
   exit 1
 fi
+
+# Check for the mandatory argument
+if [[ -z "$1" ]]; then
+    >&2  echo "Error: Name missing"
+    show_help
+    exit 1
+fi
+
 
 
 result=$(list_scripts "$SCRIPTS_FOLDER_FULL" "$days_since_install")
