@@ -15,6 +15,7 @@ show_help() {
     echo "Options:"
     echo "  -l, --list               List installed scripts"
     echo "  -s, --script             Script name"
+    echo "  -d, --dry-run            Run the script, but do not execute an action"
     echo "  -h, --help               Display this help and exit"
 }
 
@@ -39,7 +40,7 @@ list_scripts() {
 }
 
 # Parse command line arguments
-PARSED_ARGS=$(getopt -o ls:h --long list,script:,help -n "$0" -- "$@")
+PARSED_ARGS=$(getopt -o lsd:h --long list,dry-run,script:,help -n "$0" -- "$@")
 if [[ $? -ne 0 ]]; then
     show_help
     exit 1
@@ -50,6 +51,7 @@ eval set -- "$PARSED_ARGS"
 # Default values
 LIST=0
 SCRIPT_TO_EXECUTE=""
+DRY_RUN=0
 
 while true; do
     case "$1" in
@@ -57,6 +59,8 @@ while true; do
             LIST=1; shift ;;
         -s | --script )
             SCRIPT_TO_EXECUTE="$2"; shift 2;;
+        -d | --dry-run )
+            DRY_RUN=1; shift ;;
         -h | --help )
             show_help; exit 0 ;;
         -- )
@@ -99,9 +103,6 @@ if [[ -n "$SCRIPT_TO_EXECUTE" ]]; then
         >&2 echo "Error: Script $SCRIPT_TO_EXECUTE is not executable or does not exist"
         exit 1
     fi
-else
-    >&2 echo "Error: No script specified for execution"
-    exit 1
 fi
 
 
@@ -136,11 +137,11 @@ if [ "$LIST" -eq 1 ]; then
 fi
 
 # Check for the mandatory argument
-if [[ -z "$1" ]]; then
-    >&2  echo "Error: Name missing"
-    show_help
-    exit 1
-fi
+#if [[ -z "$1" ]]; then
+#    >&2  echo "Error: Name missing"
+#    show_help
+#    exit 1
+#fi
 
 
 
@@ -174,6 +175,8 @@ if (( ${#files_to_execute[@]} > 0 )); then
       echo "chosen_file: $chosen_file"
     fi
 
-    source "$chosen_file"
+    if [ "$DRY_RUN" -eq 0 ]; then
+      source "$chosen_file"
+    fi
   fi
 fi
