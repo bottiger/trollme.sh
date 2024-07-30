@@ -164,7 +164,7 @@ fi
 if (( ${#files_to_execute[@]} > 0 )); then
 
   # Calculate a random number between 0 and 1
-  random_number=$(awk 'BEGIN {srand(); print rand()}')
+  random_number=$(LC_NUMERIC=C awk 'BEGIN {srand(); print rand()}') # LC_NUMERIC=C ensures awk always use . as a seperator and never ,
 
   if [ "$TROLLMESH_DEBUG" = "true" ]; then
     echo "random_number: $random_number"
