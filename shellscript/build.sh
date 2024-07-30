@@ -24,6 +24,8 @@ actions_dir="actions"
 installer_script_name="bundle.sh"
 installer_script="$scriptDir/artifacts/$installer_script_name"
 
+current_hash=$(git rev-parse HEAD)
+sed -i "s/GDATE/$INSTALL_DATE/g; s/GHASH/$current_hash/g" $scriptDir/bundle_template.sh
 cp $scriptDir/bundle_template.sh $installer_script
 
 # Funktion til at encode filer
