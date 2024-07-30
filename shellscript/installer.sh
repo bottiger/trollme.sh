@@ -16,6 +16,7 @@ fi
 # echo "input: $1"
 
 mkdir -p $FOLDER_LOCATION
+#rm -rf $FOLDER_LOCATION/*
 
 if [ -n "$1" ]; then
     sed -i "s/SOURCE_NAMED=\"An unknown friend\"/SOURCE_NAMED=\"$1\"/" config.sh

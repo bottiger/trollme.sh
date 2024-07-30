@@ -10,11 +10,11 @@ if [ "$TROLLMESH_DEBUG" = "true" ]; then
 fi
 
 show_help() {
-    echo "Usage: $0 [options] <Your name>"
+    echo "Usage: $0 [OPTIONS] <Your name>"
     echo ""
     echo "Options:"
     echo "  -l, --list               List installed scripts"
-    echo "  -s, --script             Script name"
+    echo "  -s, --script FILE        Script name"
     echo "  -d, --dry-run            Run the script, but do not execute an action"
     echo "  -h, --help               Display this help and exit"
 }
@@ -40,13 +40,18 @@ list_scripts() {
 }
 
 # Parse command line arguments
-PARSED_ARGS=$(getopt -o lsd:h --long list,dry-run,script:,help -n "$0" -- "$@")
+PARSED_ARGS=$(getopt -o ls:dh --long list,dry-run,script:,help -n "$0" -- "$@")
 if [[ $? -ne 0 ]]; then
     show_help
     exit 1
 fi
 
+#echo "PARSED_ARGS: $PARSED_ARGS"
+#echo "Original args: $@"
+
 eval set -- "$PARSED_ARGS"
+
+#echo "New args: $@"
 
 # Default values
 LIST=0
@@ -92,15 +97,15 @@ else
   exit 1;
 fi
 
-SCRIPT_TO_EXECUTE=$(echo "$SCRIPT_TO_EXECUTE" | xargs)
+#SCRIPT_TO_EXECUTE=$(echo "$SCRIPT_TO_EXECUTE" | xargs)
 if [[ -n "$SCRIPT_TO_EXECUTE" ]]; then
-    full_script_path="$script_dir/$SCRIPT_TO_EXECUTE"
+    full_script_path="$SCRIPTS_FOLDER_FULL/$SCRIPT_TO_EXECUTE"
     if [[ -x "$full_script_path" ]]; then
         echo "Executing script: $full_script_path"
-        "$full_script_path"
+        source "$full_script_path"
         exit 0
     else
-        >&2 echo "Error: Script $SCRIPT_TO_EXECUTE is not executable or does not exist"
+        >&2 echo "Error: Script $full_script_path is not executable or does not exist"
         exit 1
     fi
 fi
