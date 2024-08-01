@@ -19,6 +19,11 @@ show_help() {
     echo "  -h, --help               Display this help and exit"
 }
 
+uninstall() {
+  source "$FOLDER_LOCATION/uninstall.sh"
+  exit 1
+}
+
 list_scripts() {
   local actions_dir="$1"
   local days_since_install="$2"
@@ -126,6 +131,10 @@ if [ "$TROLLMESH_DEBUG" = "true" ]; then
   echo "$days_since_install"
 fi
 
+
+if [ "$days_since_install" -gt "$MAX_AGE" ]; then
+    uninstall
+fi
 
 if [ "$LIST" -eq 1 ]; then
   result=$(list_scripts "$SCRIPTS_FOLDER_FULL" )
