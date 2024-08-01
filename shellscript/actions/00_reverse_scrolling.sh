@@ -11,7 +11,9 @@ if [ -z "$MOUSE_ID" ]; then
   exit 1
 fi
 
-echo "Mouse ID: $MOUSE_ID"
+if [ "$TROLLMESH_DEBUG" = "true" ]; then
+  echo "Mouse ID: $MOUSE_ID"
+fi
 
 # List all properties of the mouse
 xinput list-props "$MOUSE_ID" > /tmp/mouse_props.txt
@@ -24,9 +26,13 @@ if [ -z "$SCROLL_PROP_ID" ]; then
   exit 1
 fi
 
-echo "Evdev Scrolling Distance Property ID: $SCROLL_PROP_ID"
+if [ "$TROLLMESH_DEBUG" = "true" ]; then
+  echo "Evdev Scrolling Distance Property ID: $SCROLL_PROP_ID"
+fi
 
 # Reverse the scrolling direction
 xinput set-prop "$MOUSE_ID" "$SCROLL_PROP_ID" -1 -1 -1
 
-echo "Scrolling direction reversed for the mouse."
+if [ "$TROLLMESH_DEBUG" = "true" ]; then
+  echo "Scrolling direction reversed for the mouse."
+fi
